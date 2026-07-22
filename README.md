@@ -1,29 +1,20 @@
-# Welcome to your Lovable project
+# Horizon — Startup Pitch Event
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+The official website for **Horizon**, a flagship startup pitch event by IIC GTBIT connecting student founders with seed investors, top mentors, and ecosystem leaders.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
 npm i
 npm run dev
 ```
 
-## Built with
+The app will be available at `http://localhost:8080/`.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Tech Stack
+
+- **Framework**: TanStack Start (React + Vite)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS (v4)
+- **Smooth Scrolling**: Lenis
+- **Icons**: Lucide React
