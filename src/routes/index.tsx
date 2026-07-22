@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import horizonLogo from "@/assets/horizon-logo.jpeg.asset.json";
+import { Menu, X } from "lucide-react";
 
 const REGISTER_URL = "#register";
 
@@ -118,10 +119,12 @@ function HorizonPage() {
 }
 
 function Nav() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-2xl transition-all duration-300">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
+        <a href="#home" className="flex items-center gap-3 group z-50">
           <div className="w-8 h-8 grid place-items-center bg-foreground text-background font-display text-lg leading-none pt-1 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
             H
           </div>
@@ -138,14 +141,46 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href={REGISTER_URL}
-          className="group inline-flex items-center gap-2.5 bg-foreground text-background px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
-        >
-          Register
-          <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href={REGISTER_URL}
+            className="group hidden sm:inline-flex items-center gap-2.5 bg-foreground text-background px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]"
+          >
+            Register
+            <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </a>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-foreground focus:outline-none z-50"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Drawer Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-background/95 backdrop-blur-3xl z-40 md:hidden flex flex-col items-center justify-center gap-8">
+          {NAV.map((n) => (
+            <a
+              key={n.href}
+              href={n.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="font-mono text-sm uppercase tracking-[0.25em] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {n.label}
+            </a>
+          ))}
+          <a
+            href={REGISTER_URL}
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-4 px-8 py-3 bg-foreground text-background font-mono text-xs uppercase tracking-[0.2em] hover:bg-white/90 transition-all"
+          >
+            Register Now
+          </a>
+        </div>
+      )}
     </header>
   );
 }
