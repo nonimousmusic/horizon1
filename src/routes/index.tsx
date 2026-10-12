@@ -34,26 +34,26 @@ function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Horizon — Startup Pitch Event by IIC GTBIT" },
+      { title: "Unbuilt — Buildathon by DevX" },
       {
         name: "description",
         content:
-          "Horizon is a startup pitching event by IIC GTBIT where founders pitch to investors, secure funding, and meet mentors. Mid-August.",
+          "Unbuilt is a buildathon by DevX where student builders ship working products, get mentorship, and demo to judges. 4 November 2026.",
       },
-      { property: "og:title", content: "Horizon — Brewing Vibes Into Products" },
+      { property: "og:title", content: "Unbuilt — Brewing Vibes Into Products" },
       {
         property: "og:description",
         content:
-          "IIC GTBIT presents Horizon: a startup pitch event connecting founders, investors, and mentors. Mid-August.",
+          "DevX presents Unbuilt: a buildathon where builders ship, demo, and get mentored. 4 November 2026.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: horizonLogo.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Horizon — Brewing Vibes Into Products" },
+      { name: "twitter:title", content: "Unbuilt — Brewing Vibes Into Products" },
       { name: "twitter:image", content: horizonLogo.url },
     ],
   }),
-  component: HorizonPage,
+  component: UnbuiltPage,
 });
 
 const NAV = [
@@ -67,40 +67,40 @@ const NAV = [
 
 const SPEAKERS = [
   { name: "Member 1", role: "Principal", org: "Horizon Ventures", bio: "Early-stage investor across FinTech and SaaS with a decade of seed calls under her belt." },
-  { name: "Member 2", role: "Founder & CTO", org: "CloudSync", bio: "Serial founder. Built and sold two infra companies. Now angel investing in Indian deep tech." },
-  { name: "Member 3", role: "Director", org: "IIC GTBIT", bio: "Academic and mentor guiding student ventures from campus prototypes to funded startups." },
+  { name: "Member 2", role: "Founder & CTO", org: "CloudSync", bio: "Serial founder. Built and sold two infra companies. Reviews architecture on the floor all day." },
+  { name: "Member 3", role: "Director", org: "IIC GTBIT", bio: "Academic and mentor guiding student builders from campus prototypes to shipped products." },
   { name: "Member 4", role: "Partner", org: "Nexus VC", bio: "Leads consumer and marketplace bets. Portfolio spans D2C, edtech, and creator economy." },
   { name: "Member 5", role: "MD", org: "North Peak Capital", bio: "15 years across SaaS, deep-tech, and cross-border scale-ups. Board seats in three unicorns." },
   { name: "Member 6", role: "Head of Startups", org: "AWS India", bio: "Runs cloud credits and go-to-market programs for early-stage Indian founders." },
 ];
 
 const TIMELINE = [
-  { phase: "01", title: "Registrations Open", detail: "Founders submit their decks, one-pager, and short intro through the central portal." },
-  { phase: "02", title: "Startup Selection", detail: "Our review committee shortlists ventures on scalability, novelty, and market fit." },
-  { phase: "03", title: "Event Day", detail: "Doors open at GTBIT campus. Keynote from IIC and networking with the ecosystem." },
-  { phase: "04", title: "Pitch Sessions", detail: "Shortlisted founders pitch live to investors, mentors, and the expert jury." },
-  { phase: "05", title: "Winner Announcement", detail: "Awards, funding commitments, and incubation offers announced on the same stage." },
+  { phase: "01", title: "Registrations Open", detail: "Builders and teams sign up with an idea, a one-pager, and their stack through the central portal." },
+  { phase: "02", title: "Team Selection", detail: "Our review committee shortlists builders on curiosity, technical appetite, and the problem they want to solve." },
+  { phase: "03", title: "Build Day", detail: "Doors open at GTBIT campus. Kickoff keynote from DevX, then heads-down building begins." },
+  { phase: "04", title: "Demo Day", detail: "Teams ship a working prototype and demo it live to mentors, judges, and industry experts." },
+  { phase: "05", title: "Winner Announcement", detail: "Winning builds announced with prizes, credits, funding conversations, and incubation offers." },
 ];
 
 const FAQ = [
-  { q: "What is Horizon?", a: "Horizon is the flagship startup pitching event by IIC GTBIT, where founders pitch to a panel of investors and mentors for funding, recognition, and support." },
-  { q: "Who can attend?", a: "Founders, investors, students, mentors, and sponsors are all welcome. Anyone building or backing the next generation of startups belongs here." },
+  { q: "What is Unbuilt?", a: "Unbuilt is the flagship buildathon by DevX, in collaboration with IIC GTBIT, where teams build a working product from scratch and demo it to a panel of engineers, founders, and investors." },
+  { q: "Who can attend?", a: "Student developers, designers, founders, mentors, and sponsors are all welcome. Anyone who wants to ship something real belongs here." },
   { q: "How do I register?", a: "Hit any Register Now button on this page. You'll be redirected to our external registration portal to submit your details." },
-  { q: "Is participation free?", a: "Yes. Attending and pitching at Horizon is free for shortlisted teams. Bring your ideas, we'll bring the room." },
+  { q: "Is participation free?", a: "Yes. Building at Unbuilt is free for shortlisted teams. Bring your laptop, we'll bring the power, the wifi, and the mentors." },
   { q: "Where is the venue?", a: "The event is hosted at the GTBIT campus in New Delhi. Detailed venue instructions are shared post registration." },
-  { q: "What should startups prepare?", a: "A 5-minute pitch deck covering problem, solution, traction, market, and ask. Q&A follows with the jury." },
-  { q: "Can students attend?", a: "Absolutely. Horizon is designed to expose students to real pitching, investors, and the mechanics of building a company." },
-  { q: "How are winners selected?", a: "A jury of investors and industry veterans scores pitches on innovation, scalability, execution, and clarity of vision." },
+  { q: "What should I bring?", a: "A laptop, your dev environment, and a team — or come solo and we'll help you find one. Ideas, chargers, and caffeine help too." },
+  { q: "Can students attend?", a: "Absolutely. Unbuilt is designed for students who want to ship their first product, meet engineers, and experience a real build sprint." },
+  { q: "How are winners selected?", a: "A jury of engineers and founders scores builds on functionality, technical execution, originality, and real-world impact." },
 ];
 
 const SPONSORS = {
-  title: ["Sponsor 1"],
+  title: ["OpenAI"],
   gold: ["Sponsor 2", "Sponsor 3"],
   silver: ["Sponsor 4", "Sponsor 5", "Sponsor 6"],
   community: ["Sponsor 7", "Sponsor 8", "Sponsor 9", "Sponsor 10"],
 };
 
-function HorizonPage() {
+function UnbuiltPage() {
   return (
     <div id="home" className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-foreground selection:text-background">
       <Nav />
@@ -126,9 +126,9 @@ function Nav() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3 group z-50">
           <div className="w-8 h-8 grid place-items-center bg-foreground text-background font-display text-lg leading-none pt-1 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-            H
+            U
           </div>
-          <span className="font-display text-xl tracking-wider transition-colors duration-300 group-hover:text-white/80">HORIZON</span>
+          <span className="font-display text-xl tracking-wider transition-colors duration-300 group-hover:text-white/80">UNBUILT</span>
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
@@ -200,7 +200,7 @@ function Hero() {
             WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
           }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[320px] bg-gradient-to-t from-white/15 via-white/5 to-transparent rounded-full blur-[90px] animate-horizon-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[320px] bg-gradient-to-t from-white/15 via-white/5 to-transparent rounded-full blur-[90px] animate-unbuilt-pulse" />
         <div className="absolute top-1/4 left-1/4 w-[420px] h-[420px] rounded-full bg-white/[0.06] blur-[120px] animate-float-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-[380px] h-[380px] rounded-full bg-white/[0.04] blur-[140px] animate-float-alt" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.9))]" />
@@ -212,20 +212,20 @@ function Hero() {
             <span className="absolute inset-0 rounded-full bg-white animate-pulse-ring" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
           </span>
-          IIC GTBIT Presents · Mid-August
+          DevX Presents · 4 November 2026
         </div>
 
         <h1
           className="grain-text font-display leading-[0.82] tracking-tight animate-blur-in [animation-delay:120ms] select-none"
           style={{ fontSize: "clamp(3.5rem, 15vw, 12rem)" }}
         >
-          HORI
+          UN
           <br />
-          ZON
+          BUILT
         </h1>
 
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-up [animation-delay:400ms]">
-          Brewing vibes into products. A startup pitch event where founders meet capital,
+          Brewing vibes into products. A buildathon where builders ship real products,
           mentors meet the next wave, and student ideas find their runway.
         </p>
 
@@ -249,9 +249,9 @@ function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto w-full mt-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 font-mono animate-fade-up [animation-delay:900ms] backdrop-blur-md">
           {[
-            ["Date", "Mid-August"],
+            ["Date", "4 Nov 2026"],
             ["Venue", "GTBIT, Delhi"],
-            ["Format", "Live Pitch"],
+            ["Format", "Build + Demo"],
             ["Entry", "Free"],
           ].map(([k, v]) => (
             <div key={k} className="bg-background/90 p-4 sm:p-6 transition-all duration-300 hover:bg-white/[0.06] hover:-translate-y-1 group">
@@ -266,7 +266,7 @@ function Hero() {
 }
 
 function Marquee() {
-  const items = ["Innovation", "Funding", "Founders", "Investors", "Mentorship", "Pitch", "Scale", "Community"];
+  const items = ["Innovation", "Building", "Prototypes", "Mentorship", "Demo", "Prizes", "Scale", "Community"];
   const doubled = [...items, ...items];
   return (
     <div className="border-y border-white/10 py-6 overflow-hidden bg-background">
@@ -292,31 +292,31 @@ function About() {
             <h2 className="mt-6 font-display text-5xl md:text-6xl leading-none">
               Where ideas
               <br />
-              find their
+              get
               <br />
-              <span className="grain-text">horizon.</span>
+              <span className="grain-text">built.</span>
             </h2>
           </Reveal>
         </div>
         <div className="md:col-span-7 md:col-start-6 space-y-6 text-lg text-muted-foreground leading-relaxed">
           <Reveal delay={150}>
             <p className="transition-all duration-300 hover:text-foreground">
-              Horizon is a startup pitching event organised by <span className="text-foreground font-semibold">IIC GTBIT</span> —
-              the Institution's Innovation Council at Guru Tegh Bahadur Institute of Technology. Founders present
-              their ideas to a curated panel of investors, operators, and mentors.
+              Unbuilt is a buildathon organised by <span className="text-foreground font-semibold">DevX</span>, in
+              collaboration with the Institution's Innovation Council at Guru Tegh Bahadur Institute of Technology.
+              Solo builders and teams turn an idea into a working prototype in a single day.
             </p>
           </Reveal>
           <Reveal delay={250}>
             <p className="transition-all duration-300 hover:text-foreground">
-              The best startups walk away with more than applause: funding opportunities, mentorship,
-              press, and a shot at real momentum. The rest walk away with a room full of new believers.
+              The best builds walk away with more than applause: prizes, credits, mentorship,
+              press, and a shot at real momentum. The rest walk away with something shipped, and a room full of new believers.
             </p>
           </Reveal>
           <Reveal delay={350}>
             <div className="pt-6 grid grid-cols-3 gap-6 border-t border-white/10">
               {[
-                ["30+", "Startups"],
-                ["15+", "Investors"],
+                ["30+", "Teams"],
+                ["15+", "Mentors"],
                 ["1000+", "Attendees"],
               ].map(([n, l]) => (
                 <div key={l} className="pt-4 group cursor-pointer">
@@ -337,16 +337,16 @@ function About() {
 function WhyParticipate() {
   const groups = [
     {
-      title: "For Founders",
-      items: ["Pitch to real investors", "Funding opportunities", "Media exposure", "Mentor office hours", "Ecosystem networking"],
+      title: "For Builders",
+      items: ["Ship a real product", "Mentor office hours", "Prizes & cloud credits", "Learn new stacks", "Find a co-founder"],
     },
     {
-      title: "For Investors",
-      items: ["Curated dealflow", "Meet founders early", "Vetted student ventures", "Ecosystem visibility"],
+      title: "For Mentors",
+      items: ["Guide raw talent", "Spot early builders", "Office hours format", "Ecosystem visibility"],
     },
     {
       title: "For Students",
-      items: ["Learn startup pitching", "Meet entrepreneurs", "Build a network", "See fundraising up close", "Find co-founders"],
+      items: ["Learn by building", "Meet engineers & founders", "Build a network", "See a real sprint", "Showcase your work"],
     },
   ];
   return (
@@ -389,7 +389,7 @@ function Timeline() {
         <Reveal>
           <div className="text-center mb-20">
             <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">(03) Timeline</div>
-            <h2 className="mt-4 font-display text-5xl md:text-6xl">The road to pitch day.</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl">The road to demo day.</h2>
           </div>
         </Reveal>
         <div className="relative">
@@ -432,7 +432,7 @@ function Speakers() {
               <h2 className="mt-4 font-display text-5xl md:text-6xl">The people in the room.</h2>
             </div>
             <p className="font-mono text-xs text-muted-foreground max-w-xs uppercase tracking-widest">
-              Investors, operators, and mentors joining Horizon 2026.
+              Engineers, founders, and mentors joining Unbuilt 2026.
             </p>
           </div>
         </Reveal>
@@ -540,7 +540,7 @@ function RegisterCta() {
       <div className="max-w-[1400px] mx-auto text-center relative z-10">
         <Reveal>
           <div className="font-mono text-[11px] uppercase tracking-[0.35em] text-muted-foreground mb-8 animate-float-subtle">
-            Mid-August · GTBIT, Delhi
+            4 November 2026 · GTBIT, Delhi
           </div>
           <h2
             className="grain-text font-display leading-[0.85] tracking-tight select-none hover:scale-[1.02] transition-transform duration-500"
@@ -548,10 +548,10 @@ function RegisterCta() {
           >
             READY TO
             <br />
-            PITCH?
+            BUILD?
           </h2>
           <p className="mt-10 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Applications close early August. Grab your slot, prep your deck, and step onto the Horizon stage.
+            Applications close late October. Grab your slot, pull your team together, and ship on the Unbuilt stage.
           </p>
           <div className="mt-10">
             <a
@@ -575,11 +575,11 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 group cursor-pointer">
-              <div className="w-10 h-10 grid place-items-center bg-foreground text-background font-display text-xl pt-1 leading-none transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">H</div>
-              <span className="font-display text-2xl tracking-wide group-hover:text-white/90 transition-colors">HORIZON</span>
+              <div className="w-10 h-10 grid place-items-center bg-foreground text-background font-display text-xl pt-1 leading-none transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">U</div>
+              <span className="font-display text-2xl tracking-wide group-hover:text-white/90 transition-colors">UNBUILT</span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
-              An initiative by the Institution's Innovation Council, GTBIT. Brewing vibes into products.
+              Organised by DevX in collaboration with the Institution's Innovation Council, GTBIT. Brewing vibes into products.
             </p>
           </div>
           <div>
@@ -599,7 +599,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-          <div>© 2026 IIC GTBIT · Horizon</div>
+          <div>© 2026 DevX · Unbuilt</div>
           <div>Brewing vibes into products.</div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-# Horizon — Startup Pitch Event
+# Unbuilt — Buildathon
 
-The official website for **Horizon**, a flagship startup pitch event by IIC GTBIT connecting student founders with seed investors, top mentors, and ecosystem leaders.
+The official website for **Unbuilt**, a flagship buildathon by DevX, in collaboration with IIC GTBIT, where student builders ship working products, get mentored by ecosystem leaders, and demo to judges. 4 November 2026.
 
 ## Development
 
