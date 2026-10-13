@@ -38,13 +38,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Unbuilt is a buildathon by DevX where student builders ship working products, get mentorship, and demo to judges. 4 November 2026.",
+          "Unbuilt is a 6-hour buildathon by DevX where student teams of 1–2 ship a working product and demo to judges. 4 November 2026.",
       },
       { property: "og:title", content: "Unbuilt — Brewing Vibes Into Products" },
       {
         property: "og:description",
         content:
-          "DevX presents Unbuilt: a buildathon where builders ship, demo, and get mentored. 4 November 2026.",
+          "DevX presents Unbuilt: a 6-hour buildathon where student teams ship, demo, and get mentored. 4 November 2026.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: horizonLogo.url },
@@ -75,29 +75,26 @@ const SPEAKERS = [
 ];
 
 const TIMELINE = [
-  { phase: "01", title: "Registrations Open", detail: "Builders and teams sign up with an idea, a one-pager, and their stack through the central portal." },
-  { phase: "02", title: "Team Selection", detail: "Our review committee shortlists builders on curiosity, technical appetite, and the problem they want to solve." },
-  { phase: "03", title: "Build Day", detail: "Doors open at GTBIT campus. Kickoff keynote from DevX, then heads-down building begins." },
-  { phase: "04", title: "Demo Day", detail: "Teams ship a working prototype and demo it live to mentors, judges, and industry experts." },
-  { phase: "05", title: "Winner Announcement", detail: "Winning builds announced with prizes, credits, funding conversations, and incubation offers." },
+  { phase: "01", title: "Check-in", detail: "Doors open at 9:30 AM at GTBIT campus. Shortlisted teams collect badges and set up." },
+  { phase: "02", title: "Kickoff Keynote", detail: "DevX opens the floor at 10:00 AM — rules, judging criteria, and the mentors for the day." },
+  { phase: "03", title: "Build Sprint", detail: "Six hours on the clock. Teams ship while mentors make floor rounds." },
+  { phase: "04", title: "Demo Day", detail: "Code freezes at 4:00 PM. Each team demos a working prototype to the jury." },
+  { phase: "05", title: "Winner Announcement", detail: "Winners announced at 5:30 PM with prizes, credits, funding conversations, and incubation offers." },
 ];
 
 const FAQ = [
-  { q: "What is Unbuilt?", a: "Unbuilt is the flagship buildathon by DevX, in collaboration with IIC GTBIT, where teams build a working product from scratch and demo it to a panel of engineers, founders, and investors." },
-  { q: "Who can attend?", a: "Student developers, designers, founders, mentors, and sponsors are all welcome. Anyone who wants to ship something real belongs here." },
-  { q: "How do I register?", a: "Hit any Register Now button on this page. You'll be redirected to our external registration portal to submit your details." },
-  { q: "Is participation free?", a: "Yes. Building at Unbuilt is free for shortlisted teams. Bring your laptop, we'll bring the power, the wifi, and the mentors." },
+  { q: "What is Unbuilt?", a: "Unbuilt is the flagship 6-hour buildathon by DevX, in collaboration with IIC GTBIT, where student teams build a working product from scratch and demo it to a panel of engineers, founders, and investors." },
+  { q: "Who can attend?", a: "Students from any college can build, and anyone is welcome to attend — mentors, founders, and sponsors included. If you want to ship your first product, this is the room for you." },
+  { q: "How do I register?", a: "Click any Register Now button to jump to the registration section on this page. Build slots are reviewed by our committee; attending is free and open to all." },
+  { q: "Is participation free?", a: "Yes. Attending Unbuilt is free and open to everyone, and build slots are free for selected teams. Bring your laptop, we'll bring the power, the wifi, and the mentors." },
   { q: "Where is the venue?", a: "The event is hosted at the GTBIT campus in New Delhi. Detailed venue instructions are shared post registration." },
-  { q: "What should I bring?", a: "A laptop, your dev environment, and a team — or come solo and we'll help you find one. Ideas, chargers, and caffeine help too." },
-  { q: "Can students attend?", a: "Absolutely. Unbuilt is designed for students who want to ship their first product, meet engineers, and experience a real build sprint." },
+  { q: "What should I bring?", a: "A laptop, your dev environment, and a teammate — or come solo. Ideas, chargers, and caffeine help too." },
+  { q: "How big can teams be?", a: "Teams are 1–2 people. Solo builders are welcome — come alone and pair up on the day if you like." },
   { q: "How are winners selected?", a: "A jury of engineers and founders scores builds on functionality, technical execution, originality, and real-world impact." },
 ];
 
 const SPONSORS = {
   title: ["OpenAI"],
-  gold: ["Sponsor 2", "Sponsor 3"],
-  silver: ["Sponsor 4", "Sponsor 5", "Sponsor 6"],
-  community: ["Sponsor 7", "Sponsor 8", "Sponsor 9", "Sponsor 10"],
 };
 
 function UnbuiltPage() {
@@ -225,8 +222,8 @@ function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-up [animation-delay:400ms]">
-          Brewing vibes into products. A buildathon where builders ship real products,
-          mentors meet the next wave, and student ideas find their runway.
+          Brewing vibes into products. A six-hour buildathon where students from any college
+          ship a real product, mentors meet the next wave, and ideas find their runway.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 animate-fade-up [animation-delay:550ms]">
@@ -251,7 +248,7 @@ function Hero() {
           {[
             ["Date", "4 Nov 2026"],
             ["Venue", "GTBIT, Delhi"],
-            ["Format", "Build + Demo"],
+            ["Duration", "6 Hours"],
             ["Entry", "Free"],
           ].map(([k, v]) => (
             <div key={k} className="bg-background/90 p-4 sm:p-6 transition-all duration-300 hover:bg-white/[0.06] hover:-translate-y-1 group">
@@ -303,7 +300,8 @@ function About() {
             <p className="transition-all duration-300 hover:text-foreground">
               Unbuilt is a buildathon organised by <span className="text-foreground font-semibold">DevX</span>, in
               collaboration with the Institution's Innovation Council at Guru Tegh Bahadur Institute of Technology.
-              Solo builders and teams turn an idea into a working prototype in a single day.
+              Student teams of one or two turn an idea into a working prototype in six hours —
+              open to builders from any college.
             </p>
           </Reveal>
           <Reveal delay={250}>
@@ -311,22 +309,6 @@ function About() {
               The best builds walk away with more than applause: prizes, credits, mentorship,
               press, and a shot at real momentum. The rest walk away with something shipped, and a room full of new believers.
             </p>
-          </Reveal>
-          <Reveal delay={350}>
-            <div className="pt-6 grid grid-cols-3 gap-6 border-t border-white/10">
-              {[
-                ["30+", "Teams"],
-                ["15+", "Mentors"],
-                ["1000+", "Attendees"],
-              ].map(([n, l]) => (
-                <div key={l} className="pt-4 group cursor-pointer">
-                  <div className="font-display text-4xl md:text-5xl text-foreground transition-all duration-300 group-hover:scale-110 origin-left group-hover:text-white">{n}</div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-2 group-hover:text-white/80 transition-colors">
-                    {l}
-                  </div>
-                </div>
-              ))}
-            </div>
           </Reveal>
         </div>
       </div>
@@ -463,12 +445,7 @@ function Speakers() {
 }
 
 function Sponsors() {
-  const tiers: [string, string[]][] = [
-    ["Title Sponsor", SPONSORS.title],
-    ["Gold Sponsors", SPONSORS.gold],
-    ["Silver Sponsors", SPONSORS.silver],
-    ["Community Partners", SPONSORS.community],
-  ];
+  const tiers: [string, string[]][] = [["Title Sponsor", SPONSORS.title]];
   return (
     <section id="sponsors" className="py-32 px-6 lg:px-10 border-b border-white/10">
       <div className="max-w-[1400px] mx-auto">
@@ -488,7 +465,7 @@ function Sponsors() {
                 {list.map((s) => (
                   <div
                     key={s}
-                    className="bg-background aspect-[3/1] grid place-items-center px-4 hover:bg-white/[0.06] transition-all duration-300 group cursor-pointer hover:-translate-y-1"
+                    className={`bg-background aspect-[3/1] grid place-items-center px-4 hover:bg-white/[0.06] transition-all duration-300 group cursor-pointer hover:-translate-y-1 ${list.length === 1 ? "col-span-2 md:col-span-4" : ""}`}
                   >
                     <span className="font-display text-xl md:text-2xl tracking-wide text-center text-muted-foreground group-hover:text-foreground group-hover:scale-110 transition-all duration-300">
                       {s.toUpperCase()}
@@ -551,7 +528,7 @@ function RegisterCta() {
             BUILD?
           </h2>
           <p className="mt-10 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Applications close late October. Grab your slot, pull your team together, and ship on the Unbuilt stage.
+            Six hours. One working product. Teams of 1–2 — grab your slot and ship on the Unbuilt stage.
           </p>
           <div className="mt-10">
             <a
@@ -584,8 +561,8 @@ function Footer() {
           </div>
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Contact</div>
-            <a href="mailto:horizon@gtbit.ac.in" className="block text-sm hover:text-foreground text-muted-foreground transition-all duration-300 hover:translate-x-1">
-              horizon@gtbit.ac.in
+            <a href="mailto:devxgtbit@gmail.com" className="block text-sm hover:text-foreground text-muted-foreground transition-all duration-300 hover:translate-x-1">
+              devxgtbit@gmail.com
             </a>
             <p className="mt-2 text-sm text-muted-foreground">GTBIT Campus, New Delhi</p>
           </div>
