@@ -117,6 +117,21 @@ const SPONSORS = [
 ];
 
 function UnbuiltPage() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      try {
+        document.body.removeChild(script);
+      } catch {
+        // script already detached
+      }
+    };
+  }, []);
+
   return (
     <div id="home" className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-foreground selection:text-background">
       <Nav />
@@ -554,14 +569,13 @@ function RegisterCta() {
           <p className="mt-10 max-w-2xl mx-auto text-lg text-muted-foreground">
             Six hours. One working product. Teams of 1–2 — grab your slot and ship on the Unbuilt stage.
           </p>
-          <div className="mt-10">
-            <a
-              href={REGISTER_URL}
-              className="group inline-flex items-center gap-3 bg-foreground text-background px-10 py-5 font-mono text-sm uppercase tracking-[0.3em] hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] font-semibold"
-            >
-              <span>Register Now</span>
-              <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-2">→</span>
-            </a>
+          <div className="mt-10 flex flex-col items-center justify-center">
+            <div
+              className="apply-button"
+              data-hackathon-slug="Unbuilt"
+              data-button-theme="light"
+              style={{ height: "44px", width: "312px" }}
+            />
           </div>
         </Reveal>
       </div>
