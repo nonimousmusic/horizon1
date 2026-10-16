@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import horizonLogo from "@/assets/horizon-logo.jpeg.asset.json";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const REGISTER_URL = "#register";
 
@@ -93,9 +93,28 @@ const FAQ = [
   { q: "How are winners selected?", a: "A jury of engineers and founders scores builds on functionality, technical execution, originality, and real-world impact." },
 ];
 
-const SPONSORS = {
-  title: ["OpenAI"],
-};
+const SPONSORS = [
+  {
+    tier: "Title Sponsor",
+    items: [
+      {
+        name: "OpenAI",
+        logo: "/sponsors/openai.png",
+        href: "https://openai.com",
+      },
+    ],
+  },
+  {
+    tier: "Platform Partner",
+    items: [
+      {
+        name: "Devfolio",
+        logo: "/sponsors/devfolio.png",
+        href: "https://devfolio.co",
+      },
+    ],
+  },
+];
 
 function UnbuiltPage() {
   return (
@@ -445,7 +464,6 @@ function Speakers() {
 }
 
 function Sponsors() {
-  const tiers: [string, string[]][] = [["Title Sponsor", SPONSORS.title]];
   return (
     <section id="sponsors" className="py-32 px-6 lg:px-10 border-b border-white/10">
       <div className="max-w-[1400px] mx-auto">
@@ -456,21 +474,27 @@ function Sponsors() {
           </div>
         </Reveal>
         <div className="space-y-16">
-          {tiers.map(([tier, list]) => (
-            <div key={tier}>
+          {SPONSORS.map(({ tier, items }) => (
+            <div key={tier} className="max-w-xl mx-auto">
               <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6 text-center">
                 {tier}
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
-                {list.map((s) => (
-                  <div
-                    key={s}
-                    className={`bg-background aspect-[3/1] grid place-items-center px-4 hover:bg-white/[0.06] transition-all duration-300 group cursor-pointer hover:-translate-y-1 ${list.length === 1 ? "col-span-2 md:col-span-4" : ""}`}
+              <div className="grid grid-cols-1 gap-px bg-white/10 border border-white/10">
+                {items.map((sponsor) => (
+                  <a
+                    key={sponsor.name}
+                    href={sponsor.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative bg-background aspect-[3/1] grid place-items-center px-8 py-6 hover:bg-white/[0.05] transition-all duration-300 group cursor-pointer hover:-translate-y-1"
                   >
-                    <span className="font-display text-xl md:text-2xl tracking-wide text-center text-muted-foreground group-hover:text-foreground group-hover:scale-110 transition-all duration-300">
-                      {s.toUpperCase()}
-                    </span>
-                  </div>
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="max-h-11 md:max-h-14 w-auto max-w-[70%] object-contain opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                    />
+                    <ArrowUpRight className="absolute top-3 right-3 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  </a>
                 ))}
               </div>
             </div>
