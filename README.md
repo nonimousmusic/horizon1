@@ -1,6 +1,6 @@
 # Unbuilt — Buildathon
 
-The official website for **Unbuilt**, a flagship 6-hour buildathon by DevX, in collaboration with IIC GTBIT. Student teams of 1–2 from any college ship a working product and demo it to judges. 4 November 2026 · GTBIT Campus, New Delhi.
+The official website for **Unbuilt**, presented by DevX Bharat in collaboration with IIC GTBIT, featuring sessions and mentorship on 12 November followed by the final buildathon on 14 November 2026 · EduSat Lab, GTBIT, New Delhi.
 
 ## Development
 
